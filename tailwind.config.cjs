@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "accordian-1": "hsl(238, 29%, 16%)",
-        "accordian-2": "hsl(14, 88%, 65%)",
-        "text-1": "hsl(237, 12%, 33%)",
-        "text-2": "hsl(240, 6%, 50%)",
-        divide: "hsl(240, 5%, 91%)",
+        "primary-1": "hsl(0, 100%, 74%)",
+        "primary-2": "hsl(154, 59%, 51%)",
+        accent: "hsl(248, 32%, 49%)",
+        "neutral-1": "hsl(249, 10%, 26%)",
+        "neutral-2": "hsl(246, 25%, 77%)",
       },
       fontFamily: {
-        sans: ["Kumbh Sans", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },

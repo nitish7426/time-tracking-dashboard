@@ -1,60 +1,94 @@
 import React, { useState } from "react";
-import {
-  pattern_desktop,
-  pattern_mobile,
-  woman_mobile,
-  woman_desktop,
-} from "./assets/index";
-import { faq } from "./constants";
-import SingleAccordian from "./components/SingleAccordian";
-
+import mobile_bg from "./assets/bg-intro-mobile.png";
+import desktop_bg from "./assets/bg-intro-desktop.png";
 const App = () => {
-  const [activeIndex, setActiveIndex] = useState("");
+  const [formValues, setFormValues] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+  const inputFields = [
+    {
+      id: 1,
+      name: "first_name",
+      value: formValues.first_name,
+      onChange: handleChange,
+      placeholder: "first name",
+      type: "text",
+    },
+    {
+      id: 2,
+      name: "last_name",
+      value: formValues.last_name,
+      onChange: handleChange,
+      placeholder: "last name",
+      type: "text",
+    },
+    {
+      id: 3,
+      name: "email",
+      value: formValues.email,
+      onChange: handleChange,
+      placeholder: "email address",
+      type: "email",
+    },
+    {
+      id: 4,
+      name: "password",
+      value: formValues.password,
+      onChange: handleChange,
+      placeholder: "password",
+      type: "password",
+    },
+  ];
   return (
-    <section className="min-h-screen gradient px-6 flex items-center justify-center">
-      {/* accordian */}
-      <article className="bg-white rounded-2xl md:grid grid-cols-2 md:max-w-[900px] w-full mt-48 mb-32 md:m-0 md:items-center">
-        <div className="relative">
-          <div className="-mt-36 md:hidden">
-            <img
-              className="max-w-xs md:hidden mx-auto"
-              src={woman_mobile}
-              alt=""
-            />
-            <img
-              className="max-w-xs w-full mx-auto -mt-24 md:hidden"
-              src={pattern_mobile}
-              alt=""
-            />
-          </div>
-          {/* for desktop */}
-          <div className="hidden md:block -ml-24">
-            <img className="" src={woman_desktop} alt="" />
-            <img
-              className="absolute inset-y-0 -left-20"
-              src={pattern_desktop}
-              alt=""
-            />
-          </div>
-        </div>
-        {/* right */}
-        <div className="px-6 py-12 space-y-4 md:mr-12">
-          <h1 className="text-4xl md:text-5xl md:text-start font-bold text-center text-accordian-1">
-            FAQ
-          </h1>
+    <section className="bg-primary-1 min-h-screen px-6 py-20 md:py-12 text-white space-y-12 md:space-y-0 relative md:flex items-center md:px-12 lg:px-20 gap-20">
+      {/* background image */}
+      <img className="fixed inset-0 md:hidden" src={mobile_bg} alt="" />
+      <img className="fixed inset-0 hidden md:block" src={desktop_bg} alt="" />
+      <div className="text-center space-y-4 isolate md:text-start">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          Learn to code by watching others
+        </h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
 
-          <div className="divide-y divide-divide border-b border-divide">
-            {faq.map((value) => (
-              <SingleAccordian
-                key={value.id}
-                index={value.id}
-                question={value.question}
-                answer={value.answer}
+      <div className="space-y-8 isolate w-full max-w-lg">
+        <p className="bg-accent text-white p-6 rounded-lg text-center shadow">
+          <span className="font-semibold">Try it free 7 days</span> then
+          <br className="md:hidden" /> $20/mo. thereafter
+        </p>
+
+        {/* form */}
+        <div className="bg-white p-6 rounded-xl shadow space-y-4">
+          <form className="flex flex-col gap-4">
+            {inputFields.map((input) => (
+              <input
+                key={input.id}
+                {...input}
+                className="p-4 border rounded-md font-bold placeholder:capitalize text-neutral-1 placeholder:text-neutral-1/70 border-neutral-2 outline-primary-1"
               />
             ))}
-          </div>
+            <button className="p-4 bg-primary-2 text-white uppercase font-semibold tracking-widest rounded-md button">
+              claim your free trial
+            </button>
+          </form>
+          <p className="text-center text-neutral-2 font-semibold text-xs">
+            By clicking the button, you are agreeing to out{" "}
+            <a className="text-primary-1 font-bold" href="">
+              Terms and Services
+            </a>
+          </p>
         </div>
-      </article>
+      </div>
     </section>
   );
 };

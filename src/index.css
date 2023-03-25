@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.gradient {
-  background: linear-gradient(
-    to bottom,
-    hsl(273, 75%, 66%),
-    hsl(240, 73%, 65%)
-  );
+.button {
+  box-shadow: 0px 4px hsl(154, 56%, 37%);
+}
+
+.shadow {
+  box-shadow: 0px 8px rgba(0, 0, 0, 0.2);
 }
