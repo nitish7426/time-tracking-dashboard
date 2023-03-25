@@ -4,12 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "neutral-1": "hsl(0, 0%, 98%)",
-        "neutral-2": "hsl(0, 0%, 41%)",
-        "neutral-3": "hsl(0, 0%, 8%)",
+        "primary-1": "hsl(35, 77%, 62%)",
+        "primary-2": "hsl(5, 85%, 63%)",
+        "neutral-1": "hsl(36, 100%, 99%)",
+        "neutral-2": "hsl(233, 8%, 79%)",
+        "neutral-3": "hsl(236, 13%, 42%)",
+        "neutral-4": "hsl(240, 100%, 5%)",
       },
       fontFamily: {
-        sans: ["Epilogue", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
       },
     },
   },
