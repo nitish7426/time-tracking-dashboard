@@ -1,12 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.button {
-  box-shadow: 0px 4px hsl(154, 56%, 37%);
-}
-
-.shadow {
-  box-shadow: 0px 8px rgba(0, 0, 0, 0.2);
-}

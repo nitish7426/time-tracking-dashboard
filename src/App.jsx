@@ -1,95 +1,38 @@
-import React, { useState } from "react";
-import mobile_bg from "./assets/bg-intro-mobile.png";
-import desktop_bg from "./assets/bg-intro-desktop.png";
+import React from "react";
+import { hero_desktop, hero_mobile } from "./assets";
+import Clients from "./components/Clients";
+import Navbar from "./components/Navbar";
+
 const App = () => {
-  const [formValues, setFormValues] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
-  };
-  const inputFields = [
-    {
-      id: 1,
-      name: "first_name",
-      value: formValues.first_name,
-      onChange: handleChange,
-      placeholder: "first name",
-      type: "text",
-    },
-    {
-      id: 2,
-      name: "last_name",
-      value: formValues.last_name,
-      onChange: handleChange,
-      placeholder: "last name",
-      type: "text",
-    },
-    {
-      id: 3,
-      name: "email",
-      value: formValues.email,
-      onChange: handleChange,
-      placeholder: "email address",
-      type: "email",
-    },
-    {
-      id: 4,
-      name: "password",
-      value: formValues.password,
-      onChange: handleChange,
-      placeholder: "password",
-      type: "password",
-    },
-  ];
   return (
-    <section className="bg-primary-1 min-h-screen px-6 py-20 md:py-12 text-white space-y-12 md:space-y-0 relative md:flex items-center md:px-12 lg:px-20 gap-20">
-      {/* background image */}
-      <img className="fixed inset-0 md:hidden" src={mobile_bg} alt="" />
-      <img className="fixed inset-0 hidden md:block" src={desktop_bg} alt="" />
-      <div className="text-center space-y-4 isolate md:text-start">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-          Learn to code by watching others
-        </h1>
-        <p>
-          See how experienced developers solve problems in real-time. Watching
-          scripted tutorials is great, but understanding how developers think is
-          invaluable.
-        </p>
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <section className="md:flex items-center md:px-12 lg:px-20 2xl:px-28 justify-between">
+        <img className="md:hidden" src={hero_mobile} alt="" />
+        <img
+          className="hidden md:block order-2 md:order-1 w-full max-w-lg"
+          src={hero_desktop}
+          alt=""
+        />
 
-      <div className="space-y-8 isolate w-full max-w-lg">
-        <p className="bg-accent text-white p-6 rounded-lg text-center shadow">
-          <span className="font-semibold">Try it free 7 days</span> then
-          <br className="md:hidden" /> $20/mo. thereafter
-        </p>
-
-        {/* form */}
-        <div className="bg-white p-6 rounded-xl shadow space-y-4">
-          <form className="flex flex-col gap-4">
-            {inputFields.map((input) => (
-              <input
-                key={input.id}
-                {...input}
-                className="p-4 border rounded-md font-bold placeholder:capitalize text-neutral-1 placeholder:text-neutral-1/70 border-neutral-2 outline-primary-1"
-              />
-            ))}
-            <button className="p-4 bg-primary-2 text-white uppercase font-semibold tracking-widest rounded-md button">
-              claim your free trial
-            </button>
-          </form>
-          <p className="text-center text-neutral-2 font-semibold text-xs">
-            By clicking the button, you are agreeing to out{" "}
-            <a className="text-primary-1 font-bold" href="">
-              Terms and Services
-            </a>
+        <div className="px-5 py-12 text-center md:text-start w-full max-w-lg md:space-y-6">
+          <h1 className="text-[2.1rem] font-bold md:text-5xl lg:text-6xl 2xl:text-7xl">
+            Make remote work
+          </h1>
+          <p className="text-neutral-2 mt-2">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
           </p>
+          <a
+            href=""
+            className="px-6 py-3 hover:bg-opacity-90 transition-colors bg-neutral-3 text-white rounded-xl block w-fit mx-auto mt-6 md:mx-0"
+          >
+            Learn more
+          </a>
+          <Clients />
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
