@@ -4,15 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-1": "hsl(35, 77%, 62%)",
-        "primary-2": "hsl(5, 85%, 63%)",
-        "neutral-1": "hsl(36, 100%, 99%)",
-        "neutral-2": "hsl(233, 8%, 79%)",
-        "neutral-3": "hsl(236, 13%, 42%)",
-        "neutral-4": "hsl(240, 100%, 5%)",
+        primary: "hsl(172, 67%, 45%)",
+        "neutral-1": "hsl(183, 100%, 15%)",
+        "neutral-2": "hsl(186, 14%, 43%)",
+        "neutral-3": "hsl(184, 14%, 56%)",
+        "neutral-4": "hsl(185, 41%, 84%)",
+        "neutral-5": "hsl(189, 41%, 97%)",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        mono: ["Space Mone", "mono"],
       },
     },
   },
