@@ -60,7 +60,7 @@ const App = () => {
     },
   ];
   return (
-    <div className="bg-neutral-1 flex flex-col text-white px-6 py-12 gap-6 items-center lg:items-stretch lg:grid lg:grid-cols-4 min-h-screen sm:px-6 md:px-10 lg:px-12 xl:px-16">
+    <div className="bg-neutral-1 flex flex-col text-white px-6 py-12 gap-6 items-center lg:grid lg:grid-cols-4 min-h-screen sm:px-6 md:px-10 lg:px-12 xl:px-16">
       <User />
 
       {gridItems.map((value) => (
